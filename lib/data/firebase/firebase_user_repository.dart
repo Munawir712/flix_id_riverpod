@@ -128,7 +128,7 @@ class FirebaseUserRepository implements UserRepository {
   }
 
   @override
-  Future<Result<User>> updateUserProfilePicture(
+  Future<Result<User>> uploadProfilePicture(
       {required User user, required File imageFile}) async {
     String filename = basename(imageFile.path);
 

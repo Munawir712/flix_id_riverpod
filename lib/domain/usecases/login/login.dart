@@ -2,9 +2,9 @@ import 'package:flix_id_riverpod/data/repositories/authentication.dart';
 import 'package:flix_id_riverpod/data/repositories/user_repository.dart';
 import 'package:flix_id_riverpod/domain/entities/result.dart';
 import 'package:flix_id_riverpod/domain/entities/user.dart';
-import 'package:flix_id_riverpod/domain/usecases/login_params.dart';
 
-import 'usecase.dart';
+import '../usecase.dart';
+import 'login_params.dart';
 
 class Login implements UseCase<Result<User>, LoginParams> {
   final Authentication authentication;

@@ -1,4 +1,4 @@
-import 'package:flix_id_riverpod/domain/usecases/login.dart';
+import 'package:flix_id_riverpod/domain/usecases/login/login.dart';
 import 'package:flix_id_riverpod/persentation/providers/repositories/authentication/authentication_provider.dart';
 import 'package:flix_id_riverpod/persentation/providers/repositories/user_reposiotries/user_repository_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
