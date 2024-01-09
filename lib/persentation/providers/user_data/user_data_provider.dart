@@ -13,6 +13,7 @@ import 'package:flix_id_riverpod/domain/usecases/upload_profile_picture/upload_p
 import 'package:flix_id_riverpod/domain/usecases/upload_profile_picture/upload_profile_picture_param.dart';
 import 'package:flix_id_riverpod/persentation/providers/movie/now_playing_provider.dart';
 import 'package:flix_id_riverpod/persentation/providers/movie/upcoming_provider.dart';
+import 'package:flix_id_riverpod/persentation/providers/transaction_data/transaction_data_provider.dart';
 import 'package:flix_id_riverpod/persentation/providers/usecase/get_logged_in_user_provider.dart';
 import 'package:flix_id_riverpod/persentation/providers/usecase/login_provider.dart';
 import 'package:flix_id_riverpod/persentation/providers/usecase/logout_provider.dart';
@@ -25,7 +26,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'user_data_provider.g.dart';
 
 @Riverpod(keepAlive: true)
-class UserDataProvider extends _$UserDataProvider {
+class UserData extends _$UserData {
   @override
   Future<User?> build() async {
     GetLoggedInUser getLoggedInUser = ref.read(getLoggedInUserProvider);
@@ -111,7 +112,7 @@ class UserDataProvider extends _$UserDataProvider {
 
       if (result.isSuccess) {
         refreshUserData();
-        // TODO: Refresh Transaction
+        ref.read(transactionDataProvider.notifier).refreshTransactionData();
       }
     }
   }
