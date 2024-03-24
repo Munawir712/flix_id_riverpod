@@ -75,10 +75,13 @@ class LoginPage extends ConsumerWidget {
                 },
                 verticalSpace(24),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text("Don't have an account? "),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          ref.read(routerProvider).goNamed('register');
+                        },
                         child: const Text(
                           'Register Here',
                           style: TextStyle(fontWeight: FontWeight.bold),
