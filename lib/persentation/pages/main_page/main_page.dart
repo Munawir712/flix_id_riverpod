@@ -1,10 +1,12 @@
-import 'package:flix_id_riverpod/persentation/extensions/build_context_extension.dart';
-import 'package:flix_id_riverpod/persentation/providers/router/router_provider.dart';
-import 'package:flix_id_riverpod/persentation/providers/user_data/user_data_provider.dart';
-import 'package:flix_id_riverpod/persentation/widgets/bottom_nav_bar.dart';
-import 'package:flix_id_riverpod/persentation/widgets/bottom_nav_bar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../extensions/build_context_extension.dart';
+import '../../providers/router/router_provider.dart';
+import '../../providers/user_data/user_data_provider.dart';
+import '../../widgets/bottom_nav_bar.dart';
+import '../../widgets/bottom_nav_bar_item.dart';
+import '../profile_page/profile_page.dart';
 
 class MainPage extends ConsumerStatefulWidget {
   const MainPage({super.key});
@@ -41,7 +43,7 @@ class _MainPageState extends ConsumerState<MainPage> {
                 child: Text('Ticket'),
               ),
               Center(
-                child: Text('Profile'),
+                child: ProfilePage(),
               ),
             ],
           ),
