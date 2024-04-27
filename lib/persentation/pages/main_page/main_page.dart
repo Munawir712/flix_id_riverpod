@@ -1,3 +1,4 @@
+import 'package:flix_id_riverpod/persentation/pages/movie_page/movie_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -37,7 +38,7 @@ class _MainPageState extends ConsumerState<MainPage> {
             }),
             children: [
               Center(
-                child: Text('Movie'),
+                child: MoviePage(),
               ),
               Center(
                 child: Text('Ticket'),
