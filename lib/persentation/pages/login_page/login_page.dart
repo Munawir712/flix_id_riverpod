@@ -26,9 +26,11 @@ class LoginPage extends ConsumerWidget {
       body: ListView(
         children: [
           verticalSpace(100),
-          Image.asset(
-            'assets/flix_logo.png',
-            width: 150,
+          Center(
+            child: Image.asset(
+              'assets/flix_logo.png',
+              width: 150,
+            ),
           ),
           verticalSpace(100),
           Padding(
@@ -42,6 +44,7 @@ class LoginPage extends ConsumerWidget {
                   controller: passwordController,
                   obsecureText: true,
                 ),
+                verticalSpace(24),
                 const Align(
                   alignment: Alignment.centerRight,
                   child: Text(
@@ -51,7 +54,7 @@ class LoginPage extends ConsumerWidget {
                 ),
                 verticalSpace(24),
                 switch (ref.watch(userDataProvider)) {
-                  AsyncData(:final value) => value != null
+                  AsyncData(:final value) => value == null
                       ? SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
@@ -67,8 +70,8 @@ class LoginPage extends ConsumerWidget {
                           ),
                         )
                       : const Center(
-                          child: CircularProgressIndicator(),
-                        ),
+                      child: CircularProgressIndicator(),
+                    ),
                   _ => const Center(
                       child: CircularProgressIndicator(),
                     )
